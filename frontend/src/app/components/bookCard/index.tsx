@@ -122,7 +122,7 @@ export function BookCard() {
         <Icon>
           <FontAwesomeIcon icon={faCalendarAlt} />
         </Icon>
-        <Name onClick={toggleStartDateCalendar}>Pick Up Date</Name>
+        <Name onClick={toggleStartDateCalendar}>Choose A Date</Name>
         <SmallIcon>
           <FontAwesomeIcon
             icon={isStartCalendarOpen ? faCaretUp : faCaretDown}
@@ -133,7 +133,7 @@ export function BookCard() {
         )}
       </ItemContainer>
       <LineSeperator />
-      <ItemContainer>
+      {/* <ItemContainer>
         <Icon>
           <FontAwesomeIcon icon={faCalendarAlt} />
         </Icon>
@@ -150,7 +150,7 @@ export function BookCard() {
             onChange={setReturnDate as any}
           />
         )}
-      </ItemContainer>
+      </ItemContainer> */}
       <Marginer direction="horizontal" margin="2em" />
       <Button text="Book Your Meeting" />
     </CardContainer>

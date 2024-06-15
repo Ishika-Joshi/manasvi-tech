@@ -3,6 +3,11 @@ import ManasviLogo from "../../../assets/images/manasvi_logo.png"
 import styled from "styled-components";
 import tw from "twin.macro";
 
+interface ILogoProps {
+    color?: "white" | "dark";
+    bgColor?: "white" | "dark";
+  }
+
 
 const LogoContainer = styled.div`
 ${tw`
@@ -15,7 +20,7 @@ ${tw`
     text-xl
     md:text-2xl
     font-bold
-    text-black
+    text-purple-500
     m-1
     `};
 `;
@@ -32,13 +37,15 @@ height: 100%;
 }
 `;
 
-export function Logo(){
-    return <LogoContainer>
+export function Logo(props: ILogoProps){
+    const { color, bgColor } = props;
+
+    return (
+      <LogoContainer>
         <Image>
-            <img src={ManasviLogo} />
+          <img src={bgColor === "dark" ? ManasviLogo : ManasviLogo} />
         </Image>
-        <LogoText>
-            Manasvi technologies
-        </LogoText>
-    </LogoContainer>
-}
+        <LogoText>Manasvi Technologies</LogoText>
+      </LogoContainer>
+    );
+  }
